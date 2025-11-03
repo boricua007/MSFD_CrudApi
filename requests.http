@@ -1,0 +1,75 @@
+// GET REQUESTS
+# Test root endpoint
+GET http://localhost:5224
+
+###
+# Get all blogs
+GET http://localhost:5224/blogs
+
+###
+# Get blog by ID (existing)
+GET http://localhost:5224/blogs/1
+
+###
+# Get blog by ID (non-existing)
+GET http://localhost:5224/blogs/999
+
+
+
+
+// POST REQUESTS (CREATE)
+###
+# Create a new blog
+POST http://localhost:5224/blogs
+Content-Type: application/json
+
+{
+  "title": "Third Blog",
+  "body": "This is the content of the third blog."
+}
+
+###
+# Create another blog
+POST http://localhost:5224/blogs
+Content-Type: application/json
+
+{
+  "title": "Fourth Blog",
+  "body": "This is the content of the fourth blog."
+}
+
+
+
+// DELETE REQUESTS 
+###
+# Delete blog by ID (existing)
+DELETE http://localhost:5224/blogs/3
+
+# ###
+# # Delete blog by ID (non-existing)
+# DELETE http://localhost:5224/blogs/999
+
+
+
+
+// PUT REQUESTS (UPDATE)
+// NOTE: Make sure to create blogs first using POST before trying to update them!
+###
+# Update blog by ID (existing - blog ID 1)
+PUT http://localhost:5224/blogs/1
+Content-Type: application/json
+
+{
+    "title": "Updated First Blog",
+    "body": "This is the updated content of the first blog."
+}
+
+###
+# Update blog by ID (another existing one)
+PUT http://localhost:5224/blogs/2
+Content-Type: application/json
+
+{
+    "title": "Updated Second Blog",
+    "body": "This is the updated content of the second blog."
+}
